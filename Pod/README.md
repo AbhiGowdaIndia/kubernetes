@@ -24,7 +24,7 @@ Following are some of the **kubectl** commands normally used with pods.
 
 * To label a pod or to add label to existing pod  
 
-    **kubectl label pods \<pod-name> <key>=<value>\ **  
+    **kubectl label pods \<pod-name> \<key>=\<value> **  
     example: kubectl label pod nginx-pod env=production  
 
 * List pods along with their labels  
