@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple_pod
+spec:
+  containers:
+  - name: co1
+    image: ubuntu
+    ports:
+    - conatinerPort: 80
