@@ -7,4 +7,4 @@ spec:
   - name: co1
     image: ubuntu
     ports:
-    - conatinerPort: 80
+    - conatinerPor
