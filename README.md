@@ -63,7 +63,7 @@
 
   * Basic syntax
 
-    **kubectl apply -f <file-name>.yaml**
+    **kubectl apply -f \<file-name>\.yaml**
 
   * Apply from a remote URL
 
@@ -71,7 +71,7 @@
 
   * Apply multiple files
 
-    **kubectl apply -f deployment.yaml -f service.yaml**
+    **kubectl apply -f \<filename_1>\.yaml -f \<filename_2>\.yaml**
 
   * Common options
     
