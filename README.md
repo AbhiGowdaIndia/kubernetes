@@ -5,7 +5,7 @@
   1. Using **Kubeadm**
      
      * The script file is **k8s_installation.sh**
-     * We just need to run this script. this will setup kuberentes cluster for **Ubuntu** and **RHEL** operating systems. For any other operating system this will throouw a message.
+     * We just need to run this script. This will setup kuberentes cluster for **Ubuntu** and **RHEL** operating systems. For any other operating system this will throw a message.
        
   3. Using **Kops**
  
