@@ -20,7 +20,7 @@ Following are some of the **kubectl** commands normally used with pods.
 
 * To get detailed information about a single pod
 
-    **kubectl describe pod \<pod-name>\ **  
+    **kubectl describe pod \<pod-name>**  
 
 * To label a pod or to add label to existing pod  
 
