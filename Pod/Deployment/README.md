@@ -1,0 +1,1 @@
+# This **Pod** folder will contains **.yaml** or **.yml** file related to deployments.
