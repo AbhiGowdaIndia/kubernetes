@@ -1,4 +1,4 @@
-# This **ReplicaSet** folder will contains **.yaml** or **.yml** file related to deployments.
+# This **ReplicaSet** folder will contains **.yaml** or **.yml** file related to Replicaset.
 
 ### Create a ReplicaSet
 
