@@ -28,7 +28,7 @@
 
   * View Resources Inside a Namespace
 
-    **kubectl get all -n \<namespace-name>**
+    **kubectl get all -n \<namespace-name>**  
     Example: **kubectl get all -n dev**
 
   * List pods from perticular namespace
