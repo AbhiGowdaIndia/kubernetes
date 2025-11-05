@@ -83,4 +83,49 @@
 
     **kubectl logs \<pod-name> -n \<namespace>**
 
+### To delete pods
+
+  * Delete a Single Pod
+
+    **kubectl delete pod \<pod-name>**  
+    **kubectl delete pod nginx-7f8d9d7d9f-abcde**  
+
+  * Delete Multiple Pods
+
+    **kubectl delete pod \<pod1-name> \<pod2-name>**  
+    **kubectl delete pod nginx-abc redis-xyz**
+
+  * Delete Pods by Label Selector
+
+    **kubectl delete pod -l \<key=value>**     
+    Example: **kubectl delete pod -l app=myapp**
+
+  * Delete Pods in a Specific Namespace
+
+    **kubectl delete pod \<pod-name> -n \<namespace>**  
+    **kubectl delete pod nginx-pod -n production**
+
+  * Delete All Pods in the Current Namespace
+
+    **kubectl delete pods --all**  
+
+  * Force Delete a Pod (Immediate Termination)
+
+    **kubectl delete pod <pod-name> --grace-period=0 --force**
+
+  * Delete All Pods in a Node (e.g., for maintenance)
+
+    **kubectl delete pods --all --field-selector spec.nodeName=\<node-name>**
+    **kubectl delete pods --all --field-selector spec.nodeName=node-1**
+
+  * Delete Pods Managed by a Deployment or ReplicaSet
+
+    **kubectl delete deployment <deployment-name>**  
+
+  * Delete Pod Using YAML File
+
+    **kubectl delete -f \<file-name>**
+    Example: **kubectl delete -f pod.tyaml**
+
+
   
