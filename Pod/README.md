@@ -72,7 +72,7 @@
 
   * To view logs from a previous crashed container
 
-    **kubectl logs -p \<pod-name>**
+    **kubectl logs -p \<pod-name>**  
     **The -p (previous) flag shows logs from a container’s previous instance, helpful for crash debugging.**
 
   * To get logs from all pods with a specific label
@@ -115,7 +115,7 @@
 
   * Delete All Pods in a Node (e.g., for maintenance)
 
-    **kubectl delete pods --all --field-selector spec.nodeName=\<node-name>**
+    **kubectl delete pods --all --field-selector spec.nodeName=\<node-name>**  
     **kubectl delete pods --all --field-selector spec.nodeName=node-1**
 
   * Delete Pods Managed by a Deployment or ReplicaSet
@@ -124,7 +124,7 @@
 
   * Delete Pod Using YAML File
 
-    **kubectl delete -f \<file-name>**
+    **kubectl delete -f \<file-name>**  
     Example: **kubectl delete -f pod.tyaml**
 
 
