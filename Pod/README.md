@@ -51,7 +51,7 @@
     **kubectl get pods -l \<key=value>**  
     example: **kubectl get pods -l app=nginx**  
 
-  *  To describe pods with label selector  
+  * To describe pods with label selector  
 
     **kubectl describe pods -l <key=value>**  
     example: **kubectl describe pods -l app=nginx**  
