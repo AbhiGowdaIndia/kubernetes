@@ -116,7 +116,7 @@
   * Delete All Pods in a Node (e.g., for maintenance)
 
     **kubectl delete pods --all --field-selector spec.nodeName=\<node-name>**  
-    **kubectl delete pods --all --field-selector spec.nodeName=node-1**
+    Example: **kubectl delete pods --all --field-selector spec.nodeName=node-1**
 
   * Delete Pods Managed by a Deployment or ReplicaSet
 
