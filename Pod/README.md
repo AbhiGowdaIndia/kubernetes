@@ -48,12 +48,12 @@
 
   * To list or filter pods using label selector
 
-    **kubectl get pods -l <key=value>**  
+    **kubectl get pods -l \<key=value>**  
     example: **kubectl get pods -l app=nginx**  
 
   *  To describe pods with label selector  
 
-    **kubectl describe pods -l \<key=value>**  
+    **kubectl describe pods -l <key=value>**  
     example: **kubectl describe pods -l app=nginx**  
 
 ### To get logs from a pod in Kubernetes
