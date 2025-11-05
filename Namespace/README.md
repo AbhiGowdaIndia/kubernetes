@@ -1,4 +1,4 @@
-# This **Namespace** folder will contains **.yaml** or **.yml** file related to deployments.
+# This **Namespace** folder will contains **.yaml** or **.yml** file related to Namespace.
 
 ### Following are some of the **kubectl** commands normally used with **Namespace**.
 

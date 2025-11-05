@@ -1,8 +1,8 @@
 # This **ReplicaSet** folder will contains **.yaml** or **.yml** file related to Replicaset.
 
-### Create a ReplicaSet
+### Following are some of the **kubectl** commands normally used with **Replicaset**.
 
-  * From YAML manifest
+  * Create a ReplicaSet From YAML manifest
 
     **kubectl apply -f replicaset.yaml**  
 

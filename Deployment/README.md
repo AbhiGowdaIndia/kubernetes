@@ -1,4 +1,4 @@
-# This **Deployment** folder will contains **.yaml** or **.yml** file related to deployments.
+# This **Deployment** folder will contains **.yaml** or **.yml** file related to Deployments.
 
 ### Following are some of the **kubectl** commands normally used with **Deployment**.
 

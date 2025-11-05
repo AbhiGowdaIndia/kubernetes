@@ -1,6 +1,6 @@
-# This **Daemonset** folder will contains **.yaml** or **.yml** file related to deployments.
+# This **Daemonset** folder will contains **.yaml** or **.yml** file related to Deamonset.
 
-### Following are the kubctl commands used with Deamonset
+### Following are the **kubctl** commands used with **Deamonset**
 
   * Create a DaemonSet
 

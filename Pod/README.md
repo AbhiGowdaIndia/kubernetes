@@ -1,6 +1,6 @@
 # This **Pod** folder will contains **.yaml** or **.yml** file related to pods.
 
-### Following are some of the **kubectl** commands normally used with pods.
+### Following are some of the **kubectl** commands normally used with **Pods**.
 
   * To create or update the resource (pod)
 
