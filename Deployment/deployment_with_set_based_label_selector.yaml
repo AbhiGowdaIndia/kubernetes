@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+  # set based label selector
+    matchExpressions:
+      - key: environment
+        operator: In # In operator
+        values:
+          - dev
+          - qa
+      - key: tier
+        operator: NotIn # NotIn operator
+        values:
+          - test
+  template:
+    metadata:
+      labels:
+        app: nginx
+        environment: dev
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27
+          ports:
+            - containerPort: 80
