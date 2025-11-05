@@ -1,6 +1,6 @@
 # This **Deployment** folder will contains **.yaml** or **.yml** file related to deployments.
 
-### Following are some of the **kubectl** commands normally used with Deployment
+### Following are some of the **kubectl** commands normally used with **Deployment**.
 
   * To Create Deployment from a YAML file
 
