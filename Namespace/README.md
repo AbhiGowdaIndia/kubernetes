@@ -33,7 +33,7 @@
 
   * List pods from perticular namespace
 
-    **kubectl get pods -n \<namespace-name>**   
+    **kubectl get pods -n \<namespace-name>**     
     Ezxample: **kubectl get pods -n kube-system**
 
   * Set a Default Namespace (Persistent Context)
