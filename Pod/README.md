@@ -48,7 +48,7 @@
 
   * To list or filter pods using label selector
 
-    **kubectl get pods -l \<key=value>**  
+    **kubectl get pods -l <key=value>**  
     example: **kubectl get pods -l app=nginx**  
 
   *  To describe pods with label selector  
