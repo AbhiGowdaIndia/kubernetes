@@ -79,7 +79,16 @@
     **--dry-run=client	--> Check if YAML is valid without applying**  
     **--namespace <ns>	--> Apply in a specific namespace**  
     
+### To get logs from a pod in Kubernetes
+
+  * Basic command (single-container pod)
     
+    **kubectl logs \<pod-name>**
+
+  * If the pod has multiple containers
+
+    **kubectl logs \<pod-name> -c \<container-name>**
+
     
 
   
