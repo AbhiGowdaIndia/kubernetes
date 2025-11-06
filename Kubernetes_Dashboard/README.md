@@ -20,4 +20,4 @@
 
 ### Following are some screenshots of the kubernetes dashboard
 
-<img src="Images/User_home.jpg" width="425" height="300"> 
+![Workload screetshot](Images/k8s-workload.png)
