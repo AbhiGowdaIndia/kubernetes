@@ -33,7 +33,7 @@
 
   **curl -s https://raw.githubusercontent.com/AbhiGowdaIndia/kubernetes/main/Kubernetes_Dashboard/kubernete-dashboard.yml | bash -s install**
 
-  Please copy the **tocken** given after installation (Displayed on screen).
+  Please copy the **tocken** displayed after installation (Displayed on screen).
 
 * After installation done with anyone of the above methods, open the dashboard with **public ip of Master node** with **https** (not with http).   
 **Example:** If your Masternode public ip is **43.205.206.39** then in browser you should use **https://43.205.206.39:32000**
