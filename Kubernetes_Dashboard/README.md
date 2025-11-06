@@ -18,7 +18,7 @@
 
 * Expose a Service (ClusterIP or NodePort) for the dashboard.
 
-### This folder contains two files, **kubernetes-dashboard.yml** file, which contains config or manifest for all the resources which need to setup dashboard and **dashboard_setup.sh** file is bash script, which contains all the instructions to setup the dashboard.
+ This folder contains two files, **kubernetes-dashboard.yml** file, which contains config or manifest for all the resources which need to setup dashboard and **dashboard_setup.sh** file is bash script, which contains all the instructions to setup the dashboard.
 
 ### In master node
 
