@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ "$1" == 'install' ]]; then 
-    kubectl apply -f https://raw.githubusercontent.com/jaintpharsha/install/main/k8s/Dashboard/kubernete-dashboard.yml
+    kubectl apply -f https://github.com/AbhiGowdaIndia/kubernetes/blob/main/Kubernetes_Dashboard/kubernete-dashboard.yml
 
     mkdir -p $HOME/certs
 
@@ -24,7 +24,7 @@ if [[ "$1" == 'install' ]]; then
     echo -e "\n   USE BELLOW TOKEN TO LOGIN K8S_DASHBOARD\n"
     kubectl describe secret -n kubernetes-dashboard kubernetes-dashboard-token | grep -i 'token:      ' | awk -F 'token:      ' '{print $NF}'
 elif [[ "$1" == 'remove' ]]; then 
-    kubectl delete -f https://raw.githubusercontent.com/jaintpharsha/install/main/k8s/Dashboard/kubernete-dashboard.yml
+    kubectl delete -f https://github.com/AbhiGowdaIndia/kubernetes/blob/main/Kubernetes_Dashboard/kubernete-dashboard.yml
     [[ -d "$HOME/certs" ]] && rm -rf "$HOME/certs"
 else 
     echo "Unknown option $1"
