@@ -1,4 +1,4 @@
-# This **Service** folder will contains **.yaml** or **.yml** file related to Service.
+# This **Service** folder will contains **.yaml** or **.yml** file related to services ClusterIP and NodePort.
 
 ### Following are some of the **kubectl** commands normally used with **Service**.
 
