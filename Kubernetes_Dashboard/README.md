@@ -20,4 +20,11 @@
 
 ### Following are some screenshots of the kubernetes dashboard
 
-![Workload screetshot](Images/k8s-workload.png)
+### Dashboard Overview
+![Dashboard Screenshot](Images/k8s_workload.png)
+
+### Pods View
+![Pods Screenshot](Images/pod_list.png)
+
+### Jobs View
+![Jobs Screenshot](Images/job_list.png)
