@@ -24,7 +24,7 @@
 ![Dashboard Screenshot](Images/k8s_workload.png)
 
 ### Pods View
-![Pods Screenshot](Images/pod_list.png)
+![Pods Screenshot](Images/k8s-pods.png)
 
 ### Jobs View
-![Jobs Screenshot](Images/job_list.png)
+![Jobs Screenshot](Images/k8s-services.png)
