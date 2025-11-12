@@ -114,7 +114,7 @@
 
   * To set the cluster with name
 
-    **kubectl config set-cluster \<cluster-name> --server=\<url-of-the-server> --insecure-skip-tls-verify=true**
+    **kubectl config set-cluster \<cluster-name> --server=\<url-of-the-server> --insecure-skip-tls-verify=true**  
     Example: **kubectl config set-cluster test-cluster --server=https://65.0.203.90:6443 --insecure-skip-tls-verify=true**
 
   * to describe secrete (we need to copy the token dispyed here)
@@ -127,7 +127,7 @@
 
   * To set context with the user access
 
-    **kubectl config set-context \<context-name> --cluster=\<cluster-name> --user=\<user-name>**
+    **kubectl config set-context \<context-name> --cluster=\<cluster-name> --user=\<user-name>**  
     Example: **kubectl config set-context my-context --cluster=test-cluster --user=my-sa**
 
   * To switch to the context just we created
