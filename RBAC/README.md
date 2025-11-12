@@ -4,7 +4,7 @@
 
   * Creating service account (Using command line)
    
-    **kubectl create sa \<account-name>**
+    **kubectl create sa \<account-name>**  
     Example: **kubectl create sa my-sa**
 
   * Creating service account using manifest(yaml) file  
@@ -29,7 +29,7 @@
 
   * To describe secrete
 
-    **kubectl describe secrete \<screte-name>**
+    **kubectl describe secrete \<screte-name>**  
     Example: **kubectl describe secrete my-sa-token**
 
 ### Creting a **role** using **role.yaml** file
@@ -78,7 +78,7 @@
 
   * To list rolebindings in perticular namespace
 
-    **kubectl get rolebindings -n \<namespace-name>**
+    **kubectl get rolebindings -n \<namespace-name>**  
     Example: **kubectl get rolebindings -n default**
 
   * To list all the rolebindings in all namespaces
@@ -87,6 +87,13 @@
 
     **kubectl get rolebindings --all-namespaces**
 
+### Creating a **ClusterRoleBinding** with **cluster_role_binding.yaml** manifest(yaml) file to attach the **cluster_role(my-sa-clusterrole)** and the **account(my-sa)** that we created  
 
+  * To create a ClusterRoleBining
 
+    **kubectl appy -f cluster_role_binding.yaml**
+
+  * To list ClusterRoleBindings
+  
+    **kubectl get clusterrolebindings**
 
