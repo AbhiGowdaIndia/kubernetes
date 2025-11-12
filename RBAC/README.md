@@ -97,3 +97,39 @@
 
     **kubectl get clusterrolebindings**
 
+### Creating **context** to make use of the service account and **roles, cluster roles** we created by attaching these to the context that we are creating.
+
+  * To get the url of the cluster
+
+    **kubectl cluster-info**
+
+  * To get more information about the cluster
+
+    **kubectl cluster-info dump**
+
+  * To set the cluster with name
+
+    **kubectl config set-cluster \<cluster-name> --server=\<url-of-the-server> --insecure-skip-tls-verify=true**
+    Example: **kubectl config set-cluster test-cluster --server=https://65.0.203.90:6443 --insecure-skip-tls-verify=true**
+
+  * to describe secrete (we need to copy the token dispyed here)
+
+    **kubectl describe secrete my-sa-token**
+
+  * To add user with the token
+
+    **kubectl confg set-credentials my-sa --token=\<token-that-we-copied>**
+
+  * To set context with the user access
+
+    **kubectl config set-context \<context-name> --cluster=\<cluster-name> --user=\<user-name>**
+    Example: **kubectl config set-context my-context --cluster=test-cluster --user=my-sa**
+
+  * To switch to the context just we created
+
+    **kubectl config use-context my-context**
+
+### The context the we create by running all the above commands can be done by editing or updating config file in **$HOME/.kube/** folder like **config.yaml** file
+
+
+
