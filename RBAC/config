@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: test-cluster
+  cluster:
+  server: https://165.0.203.90:6443 # Public Ip of master node and port
+  insecure-skip-tls-verify: true
+users:
+- name: my-sa
+  token: abc122345 # paste the token here
+contexts:
+- name: my-context
+  context:
+    cluster: test-cluster
+    user: my-sa
+    namespace: default
+current-context: my-context # to set current context
+
+

@@ -97,6 +97,11 @@
 
     **kubectl get clusterrolebindings**
 
+### To test the perticular account with different operations
+
+   **kubectl auth can-i \<operation> \<resource> --as=system:\<account-type>:\<namespace-name>:\<account-name>**
+   Example: **kubectl auth can-i list pod --as=system:serviceaccount:default:my-sa
+
 ### Creating **context** to make use of the service account and **roles, cluster roles** we created by attaching these to the context that we are creating.
 
   * To get the url of the cluster
@@ -129,7 +134,29 @@
 
     **kubectl config use-context my-context**
 
-### The context the we create by running all the above commands can be done by editing or updating config file in **$HOME/.kube/** folder like **config.yaml** file
+### The context the we create by running all the above commands can be done by editing or updating config file in **$HOME/.kube/** folder like **config** file
+
+  * After updating the kubeconfig file, verify it.
+
+    **kubectl config view**
+
+  * Check available contexts
+
+    **kubectl config get-contexts**
+
+  * Switch to the right context (if needed)
+
+    **kubectl config use-context <context-name>**
+
+### Commands to list namespace level obeject and non namespace lavel objects
+
+  * To list namespace level objects
+
+    **kubectl api-resources --namespaced=true**
+
+  * To list non=-namespace level objects
+
+    ***kubectl api-resources --namespaced=false**
 
 
 
