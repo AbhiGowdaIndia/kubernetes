@@ -89,11 +89,11 @@
 
 ### Creating a **ClusterRoleBinding** with **cluster_role_binding.yaml** manifest(yaml) file to attach the **cluster_role(my-sa-clusterrole)** and the **account(my-sa)** that we created  
 
-  * To create a ClusterRoleBining
+  * To create a ClusterRoleBinding
 
     **kubectl appy -f cluster_role_binding.yaml**
 
   * To list ClusterRoleBindings
-  
+
     **kubectl get clusterrolebindings**
 
