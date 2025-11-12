@@ -34,7 +34,7 @@
 
 ### Creting a **role** using **role.yaml** file
   
-  In this file we we are creating arole with the name **my-sa-role** with access to **Pods, services and secretes** and with **get, create and list** permissions.
+  In this file we we are creating arole with the name **my-sa-role** with access to **Pods, services and secretes** with **get, create and list** permissions.
 
   * To create a Role
 
@@ -53,7 +53,7 @@
 
 ### Creating a **clusterrole** using **cluster_role.yaml** file
 
-  In this file we we are creating arole with the name **my-sa-clusterrole** with access to **Pods, services** and with **get, delete and list** permissions.
+  In this file we we are creating arole with the name **my-sa-clusterrole** with access to **Pods, services** with **get, delete and list** permissions.
 
   * To create a ClusterRole
 
@@ -63,4 +63,4 @@
 
     **kubectl get clusterroles**
 
-    
+
