@@ -40,12 +40,15 @@
 
     **kubectl appy -f role.yaml**
 
-  * To list all the roles in a namespace
+  * To list all the roles in current namespace
+    **kubectl get roles**
+
+  * To list all the roles in a perticular namespace
 
     **kubectl get roles -n \<namespace-name>**  
     ExampleL **kubectl get roles -n default**
 
-  * To list all the roles n all namespaces
+  * To list all the roles in all namespaces
 
     **kubectl get roles -A**
 
@@ -62,5 +65,28 @@
   * To list all ClusterRoles
 
     **kubectl get clusterroles**
+
+### Creating a **RoleBinding** with **role_binding.yaml** manifest(yaml) file to attach the **role(my-sa-role)** and the **account(my-sa)** that we created  
+
+  * To create a RoleBining
+
+    **kubectl appy -f role_binding.yaml**
+
+  * To list rolebindings in current namespace
+
+    **kubectl get rolebindings**
+
+  * To list rolebindings in perticular namespace
+
+    **kubectl get rolebindings -n \<namespace-name>**
+    Example: **kubectl get rolebindings -n default**
+
+  * To list all the rolebindings in all namespaces
+
+    **kubectl get rolebindings -A**
+
+    **kubectl get rolebindings --all-namespaces**
+
+
 
 
