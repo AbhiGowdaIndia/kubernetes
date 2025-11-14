@@ -36,3 +36,14 @@
 
     **Kubernetes will try to schedule your pod on nodes that match your rule. But if no matching nodes are found, the scheduler will still place the pod on any available node.**
 
+### Inter-Pod Affinity or Pod Affinity
+
+* To Create Deployment with node selctor from a YAML file
+
+  **kubectl apply -f InterpodAffinity-or-PodAffinity.yaml**
+  
+  **Pod Affinity tells Kubernetes to place a pod near other pods that match certain labels. The scheduler looks at the label of the existing pods, the label of the nodes where those pods are running or the topologyKey (which level of closeness you want). Then places the new pod accordingly.**
+
+  **In our example we used requiredDuringSchedulingIgnoredDuringExecution (HARD rule). So, If the node/zone mentioned in the topologyKey does not exist, Or If no existing pods matching the label are found in that topology: The pod will NOT be scheduled and Pod stays in Pending state forever till it the scheduler find a node/ topology.**
+
+  **If we use If using preferredDuringSchedulingIgnoredDuringExecution (SOFT rule), If the topology (node/zone) is not found, Kubernetes will Ignore the affinity rule and Schedule the pod on any available node.**
