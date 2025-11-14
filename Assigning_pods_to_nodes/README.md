@@ -16,4 +16,4 @@
 
   **kubectl appy -f nodeSelctor-deployment.yaml**
 
-* Here all the pods which are created from this deployment will assign to node with the label specified at nodeSelector, which is **env=test**. if the node with the specified label is not present, all the pods will be in pending state and not assigned to any other nodes.
+#### Here all the pods which are created from this deployment will assign to node with the label specified at nodeSelector, which is **env=test**. if the node with the specified label is not present, all the pods will be in pending state and not assigned to any other nodes.
