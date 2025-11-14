@@ -12,7 +12,7 @@
 
 ### Node Selector.
 
-  *  To Create Deployment with node selctor from a YAML file
+  * To Create Deployment with node selctor from a YAML file
 
     **kubectl appy -f nodeSelctor-deployment.yaml**
 
