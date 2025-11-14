@@ -4,12 +4,16 @@
 
 * TO give label to a node
 
-  **kubectl label node \<node-name> \<key>=\<value>**
+  **kubectl label node \<node-name> \<key>=\<value>**  
   Example: **kubectl label node ip-172-31-38-169 env-test**
 
-* To givr multiple label to a node
+* To give multiple label to a node
 
-  **kubectl label node \<node-name> \<key>=\<value> \<key>=\<value>**
+  **kubectl label node \<node-name> \<key>=\<value> \<key>=\<value>**  
   Example: **kubectl label node ip-172-31-38-169 env=test os-linux**
 
-  
+* To Create Deployment with node selctor from a YAML file
+
+  **kubectl appy -f nodeSelctor-deployment.yaml**
+
+* Here all the pods which are created from this deployment will assign to node with the label specified at nodeSelector, which is **env=test**. if the node with the specified label is not present, all the pods will be in pending state and not assigned to any other nodes.
