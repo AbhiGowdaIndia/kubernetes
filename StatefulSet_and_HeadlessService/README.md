@@ -20,7 +20,7 @@
 
 ### To perform nslookup we can use IP of the service or DNS. The DNS will be  in the bellow format.
 
-  **\<objectname>.\<namespace>.\<type>.\<url-cluster>**   
-  Example: ci-svc.default.svc.cluster.local
+  **\<objectname>.\<namespace>.\<type>.\<url-cluster>**    
+  Example: **ci-svc.default.svc.cluster.local**
 
   **nslookup ci-svc.default.svc.cluster.local**
