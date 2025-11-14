@@ -44,6 +44,18 @@
   
   **Pod Affinity tells Kubernetes to place a pod near other pods that match certain labels. The scheduler looks at the label of the existing pods, the label of the nodes where those pods are running or the topologyKey (which level of closeness you want). Then places the new pod accordingly.**
 
-  **In our example we used requiredDuringSchedulingIgnoredDuringExecution (HARD rule). So, If the node/zone mentioned in the topologyKey does not exist, Or If no existing pods matching the label are found in that topology: The pod will NOT be scheduled and Pod stays in Pending state forever till it the scheduler find a node/ topology.**
+  **In our example we used "requiredDuringSchedulingIgnoredDuringExecution" (HARD rule). So, If the node/zone mentioned in the topologyKey does not exist, Or If no existing pods matching the label are found in that topology: The pod will NOT be scheduled and Pod stays in Pending state forever till it the scheduler find a node/ topology.**
 
-  **If we use If using preferredDuringSchedulingIgnoredDuringExecution (SOFT rule), If the topology (node/zone) is not found, Kubernetes will Ignore the affinity rule and Schedule the pod on any available node.**
+  **If we use If using "preferredDuringSchedulingIgnoredDuringExecution" (SOFT rule), If the topology (node/zone) is not found, Kubernetes will Ignore the affinity rule and Schedule the pod on any available node.**
+
+### Anti-Affinity or Pod Anti-Affinity
+
+  * To Create Deployment with node selctor from a YAML file
+  
+    **kubectl apply -f InterpodAffinity-or-PodAffinity.yaml**
+
+    **Pod Anti-Affinity tells Kubernetes, “Do NOT place this pod on the same node (or zone) where other specific pods are running.” It is the opposite of pod affinity.**
+
+    **In our example we used "requiredDuringSchedulingIgnoredDuringExecution" (HARD rule). So, If the node/zone mentioned in the topologyKey has a existing pods matching the label then The pod will NOT be scheduled and Pod stays in Pending state forever till it the scheduler find a node/ topology.**
+
+    **If we use "preferredDuringSchedulingIgnoredDuringExecution" (SOFT rule), scheduler try to avoid placing two pods with the same label. If the topology (node/zone) is not found without the same labeled pod, Kubernetes will Ignore the anti-affinity rule and Schedule the pod on any available node.**
