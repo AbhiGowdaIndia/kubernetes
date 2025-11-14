@@ -59,3 +59,19 @@
     **In our example we used "requiredDuringSchedulingIgnoredDuringExecution" (HARD rule). So, If the node/zone mentioned in the topologyKey has a existing pods matching the label then The pod will NOT be scheduled and Pod stays in Pending state forever till it the scheduler find a node/ topology.**
 
     **If we use "preferredDuringSchedulingIgnoredDuringExecution" (SOFT rule), scheduler try to avoid placing two pods with the same label. If the topology (node/zone) is not found without the same labeled pod, Kubernetes will Ignore the anti-affinity rule and Schedule the pod on any available node.**
+
+### Taints and Tolerations
+
+  * To add taint to a node
+
+    **kubectl taint node \<node-name> \<key>=\<value>:effect**
+    Example: **kubectl taint node ip-172-31-35-130 env=test:NoSchedule**
+
+  * To Create Deployment with tolerations from a YAML file
+  
+    **kubectl apply -f toleration-deployment.yaml**
+
+  **The node with tains means,this node will only accepts/schedules pods which have matchinjg tolerations.**
+
+  **The pods with tolerations means, it can schedule on nodes which have taint with match and nodes which does not have any taints.**
+
