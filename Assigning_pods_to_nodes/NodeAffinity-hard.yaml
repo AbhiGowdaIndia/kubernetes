@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoreDuringExecution: # soft / preferred
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: env
+            operator: In 
+            values:
+            - test
+  containers:
+  - name: co1
+    image: nginx
+    ports:
+    - containerPort: 8080
