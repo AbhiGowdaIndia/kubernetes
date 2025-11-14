@@ -64,7 +64,7 @@
 
   * To add taint to a node
 
-    **kubectl taint node \<node-name> \<key>=\<value>:effect**
+    **kubectl taint node \<node-name> \<key>=\<value>:effect**  
     Example: **kubectl taint node ip-172-31-35-130 env=test:NoSchedule**
 
   * To Create Deployment with tolerations from a YAML file
