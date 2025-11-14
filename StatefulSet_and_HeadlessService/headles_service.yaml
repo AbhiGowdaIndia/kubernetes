@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: headless-Service
+spec:
+  clusterIP: None
+  slector:
+    app: my-app
+  ports:
+  - name: http
+    port: 30002
+    targetPort: 80
