@@ -1,0 +1,1 @@
+# This **StatefulSet_and_HeadlessService** folder will contains **.yaml** or **.yml** file related to **StaefulSet and Headless Service**.
