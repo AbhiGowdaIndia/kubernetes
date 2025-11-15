@@ -17,9 +17,9 @@
     **kubectl create configmap my-config --from-file=\<file-name>**
     **kubectl create configmap my-config --from-file=app.properties**
 
-    * app.properties contains bellow text
-      **APP_MODE=production**
-      **TIMEOUT=30**
+    * app.properties contains bellow text  
+      **APP_MODE=production**  
+      **TIMEOUT=30**  
 
   * From a YAML manifest
 
