@@ -1,6 +1,6 @@
-# This **ConfigMaps_and_Secretes** folder will contains **.yaml** or **.yml** file related to COnfigMap and Secret.
+# This **ConfigMaps_and_Secretes** folder will contains **.yaml** or **.yml** file related to ConfigMap and Secret.
 
-## COnfigMap 
+## ConfigMap 
 
   **ConfigMap is used to store non-confidential configuration data in key–value format.**  
   **Used for Store application configuration (URLs, filenames, environment configs), Store non-sensitive variables shared across Pods and Externalize configuration so you don't bake them into container images.**
