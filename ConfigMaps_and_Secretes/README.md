@@ -51,7 +51,7 @@
 
   * From literal values
 
-    **kubectl create secret generic \<secrete-name> --from-literal=\<key>=\<value> --from-literal=\<key>=\<value>**
+    **kubectl create secret generic \<secrete-name> --from-literal=\<key>=\<value> --from-literal=\<key>=\<value>**  
     **kubectl create secret generic db-secret --from-literal=username=admin --from-literal=password="P@ss123"**
 
   * From YAMLFrom YAML
