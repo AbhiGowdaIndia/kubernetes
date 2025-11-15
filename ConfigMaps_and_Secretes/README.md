@@ -9,12 +9,12 @@
 
   * From literal values
 
-    **kubectl create configmap \<config-name> --from-literal=\<Key>=\<value>**
+    **kubectl create configmap \<config-name> --from-literal=\<Key>=\<value>**  
     Example: **kubectl create configmap my-config --from-literal=APP_MODE=production --from-literal=TIMEOUT=30**
 
   * From a file
 
-    **kubectl create configmap my-config --from-file=\<file-name>**
+    **kubectl create configmap my-config --from-file=\<file-name>**  
     **kubectl create configmap my-config --from-file=app.properties**
 
     * app.properties contains bellow text  
