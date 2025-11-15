@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: my-app 
+spec: 
+  containers:
+  - name: co1
+    images: nginx
+    ports: 
+    - containerPorts: 8080
+    env:
+    - name: APP_MODE
+      valueFrom:
+        configMapKeyRef:
+          name: my-config
+          key: APP_MODE 
+    - name: TIMEOUT
+      valueFrom:
+        configMapKeyRef:
+          name: my-config
+          key: TIMEOUT
