@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: all-container-types
+  labels:
+    app: demo
+spec:
+  # -------------------------
+  # 1. INIT CONTAINER
+  # -------------------------
+  initContainers:
+    - name: init-check-db
+      image: busybox
+      command: ["sh", "-c", "echo 'Waiting for DB...' && sleep 5"]
+
+  # -------------------------
+  # 2. MAIN APPLICATION CONTAINER
+  # -------------------------
+  containers:
+    - name: app
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: app-logs
+          mountPath: /var/log/nginx
+
+    # -------------------------
+    # 3. SIDECAR CONTAINER (logging agent)
+    # -------------------------
+    - name: log-agent
+      image: fluentd
+      volumeMounts:
+        - name: app-logs
+          mountPath: /app-logs
+
+    # -------------------------
+    # 4. ADAPTER CONTAINER (converts logs to JSON)
+    # -------------------------
+    - name: log-adapter
+      image: busybox
+      command: ["sh", "-c", "echo 'Converting logs...' && sleep 3600"]
+      volumeMounts:
+        - name: app-logs
+          mountPath: /logs
+
+    # -------------------------
+    # 5. AMBASSADOR CONTAINER (proxy for outgoing traffic)
+    # -------------------------
+    - name: ambassador-proxy
+      image: envoyproxy/envoy:latest
+      args: ["-c", "/etc/envoy/envoy.yaml"]
+      volumeMounts:
+        - name: envoy-config
+          mountPath: /etc/envoy
+
+  # -------------------------
+  # VOLUMES (shared for sidecars)
+  # -------------------------
+  volumes:
+    - name: app-logs
+      emptyDir: {}
+
+    - name: envoy-config
+      configMap:
+        name: envoy-config
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: envoy-config
+data:
+  envoy.yaml: |
+    static_resources:
+      listeners: []
+      clusters: []
