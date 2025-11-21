@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-pod-example
+spec:
+  containers:
+    - name: app
+      image: busybox
+      command: ["/bin/sh", "-c", "echo 'Hello from Pod' > /data/hello.txt; sleep 30"]
+      volumeMounts:
+        - name: host-storage
+          mountPath: /data
+
+  volumes:
+    - name: host-storage
+      hostPath:
+        path: /data/pod_data
+        type: DirectoryOrCreate
