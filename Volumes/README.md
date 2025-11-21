@@ -71,3 +71,40 @@
 * create a pod with PVC attaching to claim PV
 
   **kubectl apply -f PV_PVC_Pod.yaml**
+
+### Storage Class (Dynamic Persistent Volume)
+
+* **A StorageClass in Kubernetes defines how dynamic storage (PersistentVolumes) should be created. Each StorageClass is associated with a particular storage backend or provider (AWS,EBS,EFS, Azure etc).**  
+* **We need to install driver for the storage provider. Search for the "Kubernetes SIGS" in browser, where we can find all the CSI(Cloud Storage Interface) drivers of all the cloud providers. (Since we are using AWS-EBS as storage, we need to instal driver for AWS-EBS.)**  
+* **To use AWS-EBS as storage class or DynamicPersistentVolume we should have IAM Account with access to EBS and we shouls have the "AWS_ACCESS_KEY_ID" and "AWS_SECRETE_ACCESS_KEY" of that IAM user and need to export these credential to environmental variables along with "AWS_DEFAULT_REGION".**
+
+* To generate or Create generic aws-secrete
+
+  **kubectl create secret generic aws-secret --namespace kube-system --from-literal=key_id=${AWS_ACCESS_KEY_ID} --from-literal=access_key=${AWS_SECRET_ACCESS_KEY}**
+
+  **kubectl get secret -m kube-system**
+
+  **kubectl describe secret aws-secret -n kube-system**
+
+* Deploy the driver
+
+  **Kubectl apply -k "\<github_link_to_the_driver>"**
+
+* Create a storage class using YAML file
+
+  **kubectl apply -fStorageClass_EBS.yaml**
+  
+  **Kubectl get sc**
+
+  **kubectl describe sc ebs-sc**
+
+* To create PVC to claim StorageClass using YAML file
+
+  **kubectl apply -f PVC_EBS.yaml**
+
+  **kubectl get pvc**
+
+  **kubectl describe pvc ebs-pvc**
+
+* **Now can login and see in "AWS consol -> EBS Volumes" to check he created volume.**
+  **The volume can be used by a resource once the resource is attached the PVC.**
