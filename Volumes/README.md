@@ -54,3 +54,20 @@
     *  **/data/volume/secret/app.conf**
     *  **/data/volume/configmap/app.properties**  
 
+### Persistent Volume and Persistent Volume Claim
+
+* **A PersistentVolume (PV) is a cluster-level storage resource in Kubernetes. It represents actual physical storage (like a disk on a node, NFS share, AWS EBS, etc.). Each PV has capacity, access modes, reclaim policy (Retain, Recycle, Delete) and the access mode (RWO, ROX, RWX). They exist independent of Pods, meaning data is preserved even if the Pod using it is deleted.**
+
+* **A PersistentVolumeClaim (PVC) is a request for storage made by a Pod. It is a namespace-level storage resource in Kubernetes. PVCs specify how much storage is needed. Kubernetes matches a PVC to a suitable PV automatically (binding). We can claim the Persitant volume from any namespace by create a Persistent volume claim.**
+
+* Creating a Persistent volume form YAML file
+
+  **kubectl apply -f PersistentVolume.yaml**
+
+* Creating a Persistent volume claim form YAML file
+
+  **kubectl apply -f PersistentVolumeClaim.yaml**
+
+* create a pod with PVC attaching to claim PV
+
+  **kubectl apply -f PV_PVC_Pod.yaml**
