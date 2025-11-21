@@ -1,4 +1,4 @@
-# This **Volumes** folder will contains **.yaml** or **.yml** file related to volumes **emptyDir, hostpath, configMap, secrete, and persistent volume**.
+# This **Volumes** folder will contains **.yaml** or **.yml** file related to **emptyDir, hostpath, configMap, secrete, and persistent volume**.
 
 ### emptyDir Volume
 
