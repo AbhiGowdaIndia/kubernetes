@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: slow-app
+spec:
+  containers:
+    - name: slow-container
+      image: my-slow-app
+      ports:
+        - containerPort: 8080
+      startupProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        initialDelaySeconds: 0
+        periodSeconds: 10
+        failureThreshold: 10
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        periodSeconds: 10

@@ -58,6 +58,24 @@
 
     **kubectl apply -f ReadinessProbe_Pod.yaml**
 
+#### Startup Probe
 
+  * **A startup probe in Kubernetes is a special health check used to verify that a container has successfully started before any other probes run.**  
+  * **Kubernetes waits until startup probe passes, Only then liveness & readiness probes become active**  
+  * **If startup probe fails → Kubernetes restarts the container**  
+
+  * To create a pod with ReadinessProbe
+
+    **kubectl apply -f StartupProbe_Pod.yaml**
+
+**Key fields**
+
+* **httpGet / tcpSocket / exec** → type of check
+
+* **initialDelaySeconds** → wait before first check (default 10s)
+
+* **periodSeconds** → how often to check (default 10s)
+
+* **failureThreshold** → consecutive failures (default 3)
 
   
