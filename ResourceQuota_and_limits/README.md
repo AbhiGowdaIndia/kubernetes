@@ -47,9 +47,16 @@
 
   **kubectl apply -f Cpu_and_memory_RQ.yaml**
 
-  * **pods: "10"**	Max number of pods in namespace
-  * **requests.cpu: "2"**	Total CPU requested by all pods cannot exceed 2
-  * **requests.memory: 4Gi**	Total memory requested cannot exceed 4Gi
-  * **limits.cpu: "4"**	Total CPU limits assigned cannot exceed 4
-  * **limits.memory: 8Gi**	Total memory limits assigned cannot exceed 8Gi
+  * **pods: "10"**	Max number of pods in namespace  
+  * **requests.cpu: "2"**	Total CPU requested by all pods cannot exceed 2  
+  * **requests.memory: 4Gi**	Total memory requested cannot exceed 4Gi  
+  * **limits.cpu: "4"**	Total CPU limits assigned cannot exceed 4  
+  * **limits.memory: 8Gi**	Total memory limits assigned cannot exceed 8Gi  
 
+* To create a **ResourceQuota to restrict Storage** in **dev-team** namespace.
+
+  **kubectl apply -f Storage_RQ.yaml**
+
+  * **requests.storage: 100Gi** → This applies to all PVCs in the namespace, no matter which storage class they use. Total storage requested across the namespace cannot exceed 100Gi  
+  * **gp2.storageclass.storage.k8s.io/requests.storage: 50Gi** → This limits storage only for PVCs using the gp2 storage class.  
+  * **persistentvolumeclaims: "10"** → This limits the number of PVC objects, not storage amount. Maximum 10 PVCs can exist in that namespace — regardless of size
