@@ -29,7 +29,7 @@
 
   * Per-storage-class usage
 
-* To create a ResourceQuota to restrict only 2 pods and 2 deplyments in **dev-team** namespace.
+* To create a **ResourceQuota to restrict only 2 pods and 2 deplyments** in **dev-team** namespace.
 
   **kubectl appy -f Pod-and-Deployment-RQ.yaml**
 
@@ -42,3 +42,14 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count/pods: "2"  
     &nbsp;&nbsp;&nbsp;&nbsp;scopes:  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- BestEffort  
+
+* To create a **ResourceQuota to restrict CPU and MEMORY** in **dev-team** namespace.
+
+  **kubectl apply -f Cpu_and_memory_RQ.yaml**
+
+  * **pods: "10"**	Max number of pods in namespace
+  * **requests.cpu: "2"**	Total CPU requested by all pods cannot exceed 2
+  * **requests.memory: 4Gi**	Total memory requested cannot exceed 4Gi
+  * **limits.cpu: "4"**	Total CPU limits assigned cannot exceed 4
+  * **limits.memory: 8Gi**	Total memory limits assigned cannot exceed 8Gi
+
