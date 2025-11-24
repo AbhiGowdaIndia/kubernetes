@@ -48,3 +48,16 @@
 
     **kubectl apply -f LivenessProbe_Pod.yaml**
 
+#### Readiness Probe
+
+  * **A Readiness Probe in Kubernetes is a health check that tells when a container is ready to receive traffic.**  
+  * **Kubernetes waits until the readiness probe succeeds. Only then the Pod is added to the Service endpoint**  
+  * **If the probe fails, the Pod stays running, but stops receiving traffic. (It does NOT restart the container)**  
+
+  * To create a pod with ReadinessProbe
+
+    **kubectl apply -f ReadinessProbe_Pod.yaml**
+
+
+
+  
