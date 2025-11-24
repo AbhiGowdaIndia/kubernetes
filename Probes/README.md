@@ -29,7 +29,7 @@
 
 **gRPC probe (K8s v1.24+)**
   
-  grpc:
+  grpc:  
   &nbsp;&nbsp;port: 8080
 
 #### Types of probes
