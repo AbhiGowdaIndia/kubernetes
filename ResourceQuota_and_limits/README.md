@@ -28,3 +28,11 @@
   * Total storage requested
 
   * Per-storage-class usage
+
+* To create a ResourceQuota to restrict only 2 pods and 2 deplyments in **dev-team** namespace.
+
+  **kubectl appy -f Pod-and-Deployment-RQ.yaml**
+
+  * After this if we try to create more tha 2 pods, it will create only 2 pods and remaining pods will be in pending state.
+  * Suppose, if a deployment contains 4 replicas of a pod, it will create only 2 pods and remaining 2 will be in pending state.
+  * we can only create only 2 deployments, if we try to create more tha 2 deployments, those will be in pending state.
