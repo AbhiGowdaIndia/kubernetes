@@ -14,23 +14,23 @@
 **HTTP check**
 
   httpGet:  
-    path: /status  
-    port: 8080
+  &nbsp;&nbsp;path: /status  
+  &nbsp;&nbsp;port: 8080
 
 **TCP check**
 
   tcpSocket:  
-    port: 6379
+  &nbsp;&nbsp;port: 6379
 
 **Exec command**
 
   exec:  
-    command: ["pg_isready"]
+  &nbsp;&nbsp;command: ["pg_isready"]
 
 **gRPC probe (K8s v1.24+)**
   
   grpc:
-    port: 8080
+  &nbsp;&nbsp;port: 8080
 
 #### Types of probes
 
