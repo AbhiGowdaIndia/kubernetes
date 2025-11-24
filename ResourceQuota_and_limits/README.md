@@ -37,8 +37,8 @@
   * Suppose, if a deployment contains 4 replicas of a pod, it will create only 2 pods and remaining 2 will be in pending state.  
   * we can only create only 2 deployments, if we try to create more tha 2 deployments, those will be in pending state.  
   * We can use **count/pods** in special cases like **When using scopes or scopeSelector**, example  
-    &nbsp;&nbsp;spec:
-    &nbsp;&nbsp;&nbsp;&nbsp;hard:
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count/pods: "2"
-    &nbsp;&nbsp;&nbsp;&nbsp;scopes:
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- BestEffort
+    &nbsp;&nbsp;spec:  
+    &nbsp;&nbsp;&nbsp;&nbsp;hard:  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count/pods: "2"  
+    &nbsp;&nbsp;&nbsp;&nbsp;scopes:  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- BestEffort  
