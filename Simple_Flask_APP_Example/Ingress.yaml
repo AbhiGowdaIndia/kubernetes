@@ -8,7 +8,22 @@ spec:
     - host: proj1.example.com
       http:
         paths:
-          - path: /
+          paths:
+          - path: /a
+            pathType: Prefix
+            backend:
+              service:
+                name: proj1-svc
+                port:
+                  number: 80
+          - path: /b
+            pathType: Prefix
+            backend:
+              service:
+                name: proj1-svc
+                port:
+                  number: 80
+          - path: /c
             pathType: Prefix
             backend:
               service:
