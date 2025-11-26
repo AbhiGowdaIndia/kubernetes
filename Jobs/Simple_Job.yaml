@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  template:
+    metadat:
+      name: my-busybox
+    spec:
+      containers:
+      - name: co1
+        image: busybox
+        command: ["echo", "Hello from Kubernetes Job"]
+      restartPolicy: Never
+  # How many pods can run at the same time
+  parallelism: 2
+
+  # Total successful pods required to finish the job
+  completions: 2
+
+  # Max number of retries before job fails
+  backoffLimit: 3
+
+  # Maximum time job is allowed to run (in seconds)
+  activeDeadlineSeconds: 60
