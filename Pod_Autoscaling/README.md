@@ -30,4 +30,19 @@
   * **While HPA scales number of pods, VPA scales resources of each pod.**
   * **VPA restarts pods when applying new CPU/memory values.**
   * **Requires VPA installation (not built-in like HPA).**
-    ****
+
+  * Install VPA CRDs
+    
+    **kubectl apply -f https://github.com/kubernetes/autoscaler/releases/latest/download/vpa-v1-crd.yaml**
+
+  * Install VPA components
+
+    **kubectl apply -f https://github.com/kubernetes/autoscaler/releases/latest/download/vpa-v1-example.yaml**
+
+  * Verify VPA installation
+
+    **kubectl get pods -n kube-system | grep vpa**
+
+  * To create a Deployemnt with VPA based on CPU utilization.
+    **kubectl apply -f deployment.yaml**
+    **kubectl apply -f vpa.yaml**
