@@ -21,7 +21,7 @@
 
 * **Install Using Official YAML (kubectl apply)**
 
-  * RUn:
+  * Run:
 
     **kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml**
 
