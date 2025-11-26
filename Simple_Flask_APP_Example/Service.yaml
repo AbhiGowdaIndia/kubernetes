@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proj1-svc
+spec:
+  selector:
+    app: proj1
+  ports:
+    - port: 80
+      targetPort: 5000
+  type: ClusterIP
