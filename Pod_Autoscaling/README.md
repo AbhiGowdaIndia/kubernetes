@@ -6,3 +6,28 @@
 
   * **Horizontal Pod Autoscaling (HPA)**  
   * **Vertical Pod Autoscaling (VPA)**  
+
+### Horizontal Pod Autoscaling (HPA)
+  
+  * **HPA (Horizontal Pod Autoscaler) automatically increases or decreases the number of pod replicas in a Deployment / ReplicaSet / StatefulSet based on CPU, memory, or custom metrics.**
+
+  Example:  
+    * If your pod CPU is >70% for 5 minutes, HPA scales pods from 2 → 5.**
+
+  * To create a Deployemnt with HPA based on CPU utilization.
+
+    **kubectl apply -f Deployment.yaml**  
+    **kubectl apply -f HPA.yaml**
+
+    * Deployment starts with 2 replicas  
+    * If average CPU usage per pod > 50%, HPA scales up  
+    * If CPU drops < 50%, HPA scales down (not below 2 pods)   
+    *  Maximum scale-out is 10 pods
+
+### Vertical Pod Autoscaling (VPA)
+
+  * **Vertical Pod Autoscaler (VPA) automatically adjusts a pod’s CPU and memory requests/limits based on actual usage.**
+  * **While HPA scales number of pods, VPA scales resources of each pod.**
+  * **VPA restarts pods when applying new CPU/memory values.**
+  * **Requires VPA installation (not built-in like HPA).**
+    ****
