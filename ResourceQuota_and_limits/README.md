@@ -1,4 +1,4 @@
-### This **ResourceQuota_and_limts** folder will contains **.yaml** or **.yml** file related to **ResourceQuota and limits**.
+# This **ResourceQuota_and_limts** folder will contains **.yaml** or **.yml** file related to **ResourceQuota and limits**.
 
 * **ResourceQuota is a policy applied at the namespace level to limit how many resources users or workloads can consume in that namespace.**
 * **It prevents one team/app from using all cluster resources.**

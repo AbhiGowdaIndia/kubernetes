@@ -1,4 +1,4 @@
-### The "Assigning_pods_to_nodes" folder contauins of multiple ways to control which pod goes to which node, like "node selector", "Affinity or Node Affinity", "Inter-Pod Affinity or Pod Affinity","Anti-Affinity or Pod Anti-Affinity" and "Taints and Tolerations"
+# The "Assigning_pods_to_nodes" folder contauins of multiple ways to control which pod goes to which node, like "node selector", "Affinity or Node Affinity", "Inter-Pod Affinity or Pod Affinity","Anti-Affinity or Pod Anti-Affinity" and "Taints and Tolerations"
 
 * To give label to a node
 

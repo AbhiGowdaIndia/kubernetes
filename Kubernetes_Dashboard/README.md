@@ -1,4 +1,4 @@
-### The Kubernetes Dashboard is a web UI for Kubernetes clusters. 
+# The Kubernetes Dashboard is a web UI for Kubernetes clusters. 
 
 **It allows you to:**
 

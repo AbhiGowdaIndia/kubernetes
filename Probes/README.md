@@ -1,4 +1,4 @@
-### This **Probes** folder will contains **.yaml** or **.yml** file related to **Liveness Probe, Readiness Probe and startup Probe**.
+# This **Probes** folder will contains **.yaml** or **.yml** file related to **Liveness Probe, Readiness Probe and startup Probe**.
 
 * **Probes are periodic calls to some application endpoints  within a contaner.**
 
