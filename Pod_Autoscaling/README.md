@@ -44,5 +44,6 @@
     **kubectl get pods -n kube-system | grep vpa**
 
   * To create a Deployemnt with VPA based on CPU utilization.
-    **kubectl apply -f deployment.yaml**
+
+    **kubectl apply -f deployment.yaml**  
     **kubectl apply -f vpa.yaml**
