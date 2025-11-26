@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob
+spec:
+  schedule: "0 1 * * *"     # Run daily at 1 AM
+  # Optional fields
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  concurrencyPolicy: Forbid      # Do not start a new job if previous is still running
+  startingDeadlineSeconds: 100   # Deadline to start the job after its scheduled time
+  jobTemplate:
+    spec:
+      backoffLimit: 4
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: busybox
+            command: ["sh", "-c", "echo Running backup; sleep 20; echo Backup done"]
+          restartPolicy: OnFailure
+    
