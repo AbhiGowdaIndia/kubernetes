@@ -25,38 +25,67 @@
   * Build the Docker image   
     **docker build -t frontend:latest .** # do the same for other API's also ( backend and db )
 
-  * Tag the image for your Docker repository  
+  * Tag the image for your Docker repository    
     **docker tag frontend:latest yourrepo/frontend:latest**  # do the same for other API's also ( backend and db )
 
-  * Log in to Docker Hub
+  * Log in to Docker Hub  
     **docker login**
 
-  * Push the image to Docker Hub
+  * Push the image to Docker Hub  
     **docker push yourrepo/frontend:latest**  # do the same for other API's also ( backend and db )
 
 * **Deployment.yaml**
 
   * **Defines Pods + ReplicaSets for all 3 tiers:**
-    * frontend Deployment, backend Deployment, db Deployment
-    * Each Deployment:
-      * Runs 1 replica
-      * Uses Docker image you created
-      * Exposes container port
-  * *** **kubectl apply -f Deployment.yaml**
+    * frontend Deployment, backend Deployment, db Deployment  
+    * Each Deployment:  
+      * Runs 1 replica  
+      * Uses Docker image you created  
+      * Exposes container port  
+  * **kubectl apply -f Deployment.yaml**
 
 * **Service.yaml**
 
-  * Services give stable DNS names so apps can reach each other
+  * Services give stable DNS names so apps can reach each other  
   * **kubectl apply -f Service.yaml**
 
 * **Ingress.yaml**
 
-  * Expose only frontend to external world.
-  * Requests to your domain go to frontend service
-  * Backend and DB remain internal only
+  * Expose only frontend to external world.  
+  * Requests to your domain go to frontend service  
+  * Backend and DB remain internal only  
   * **kubectl apply -f Ingress.yaml**
 
-* 
+* **NetworPolicy.yaml**
+
+  * Secure the cluster by allowing only:  
+    * from **Frontend** to **backend** on **port 5001**  
+    * from **backend** to **db** on **port 5002**
+  * * **kubectl apply -f NetworPolicy.yaml**
+
+* Then open (In browser)
+  **http://flask.example.com/**
+
+### How all files work together
+
+  * **frontend.py** → Flask code running on port 5000, **which can be access fron out side.**
+
+  * **backend.py** → Flask code running on port 5001, **which can be access only from frontend pods.**
+
+  * **db.py** → Flask code running on port 5002, **which can be access only from backend pods.**
+
+  * **Dockerfile** → containerizes the app.
+
+  * **Deployment** → runs multiple pods with the app container.
+
+  * **Service** → exposes pods internally on port 80.
+
+  * **Ingress** → exposes the Service externally via a host URL.
+
+  * **NetworkPolicy** → Network Policies are used to control how pods communicate with each other.
+
+
+
 
 
 
