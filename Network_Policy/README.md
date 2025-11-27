@@ -1,17 +1,25 @@
 # This **Network_Policy** folder will contains **.yaml** or **.yml** file related to NetworkPolicy.
 
-* **Kubernetes Network Policies are rules that control how pods communicate with each other and with external networks.**
-* **They act like a firewall for pods inside the cluster.**
-* **By default in Kubernetes:**
-    * **All pods can talk to all other pods (allow all).**
-    * **All traffic to/from pods is allowed unless restricted.**
-* **A NetworkPolicy lets you restrict this traffic.**
-* **When defining a pod or namespace based network policy, we use a selector to specify what traffic is allowed to and from the pod(s) that match the selector.**
+* **Kubernetes Network Policies are rules that control how pods communicate with each other and with external networks.**  
+* **They act like a firewall for pods inside the cluster.**  
+* **By default in Kubernetes:**  
+    * **All pods can talk to all other pods (allow all).**  
+    * **All traffic to/from pods is allowed unless restricted.**  
+* **A NetworkPolicy lets you restrict this traffic.**  
+* **When defining a pod or namespace based network policy, we use a selector to specify what traffic is allowed to and from the pod(s) that match the selector.**  
 
-* To cretate a network policy which deny all ingress
+* To cretate a Network Policy which deny all ingress
 
   **kubectl apply -f NP_Deny_all_ingress.yaml**
 
-  * **podSelector: {}** → Selects all pods in the namespace (default).
-  * **policyTypes: Ingress** → This policy controls only incoming traffic.
-  * **No ingress: block** → This means deny all ingress traffic.
+  * **podSelector: {}** → Selects all pods in the namespace (default).    
+  * **policyTypes: Ingress** → This policy controls only incoming traffic.   
+  * **No ingress: block** → This means deny all ingress traffic.  
+
+* To create a To cretate a Network Policy which allow ingress
+
+  **kubectl apply -f Allow_ingress.yaml**
+
+  * **This policy applies to backend pods.**
+  * **They will accept traffic only from frontend pods.**
+  * **Only on port 30000.**
