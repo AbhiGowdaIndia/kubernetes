@@ -1,94 +1,40 @@
 # Kubernetes
 
-* It contains bash scripts to steup a **kubernetes clusers** in 2 ways.
-  
-  1. Using **Kubeadm**
-     
-     * The script file is **k8s_installation.sh**
-     * We just need to run this script. This will setup kuberentes cluster for **Ubuntu** and **RHEL** operating systems. For any other operating system this will throw a message.
-       
-  3. Using **Kops**
- 
-     * The file is **install_kubernetes_using_kops.txt**
-     * The file will conatines several steps, we need to run all the mentiones steps to setup kuberenets cluster which is managed by AWS.
-     
-     
-* This repository contains **templates for pods, controllers like Deployments, Replicasets, Deamonsets etc..**
-  
-* It also contains the **kubectl commands used with objects**, perticlarly within the folders for which object they are related to.
+### Kubernetes Examples & Demo Repository ⚙️
 
-### Following are the commands used get the details of clusters and change clusters
+This repository covers **Pods, Deployments, Services, ReplicaSets, DaemonSets, StatefulSets, Volumes, Persistent Volumes/Claims, ConfigMaps/Secrets, RBAC, Network Policies, Ingress, Jobs, Autoscaling, Probes, Namespaces, ResourceQuotas, and more**. It also includes a simple **Flask application example** to demonstrate microservice deployment and connectivity inside Kubernetes.
 
-  * To list all the kubernetes clusters
-    
-    **kubectl config get-clusters**
+---
 
-  * To list all the cotext (Includes Users + cluster)
+## 🧰 Repository Structure
 
-    **kubectl config get-context**
-
-  * To show the current (active) cluster
-
-    **kubectl config current-context**
-
-  * To switch between context
- 
-    **kubectl config use-context <context_name>**
-
-### Following are the commands used get the details nodes
-
-  * To list the nodes
-
-    **kubectl get nodes**
-    
-    shorter format **kubectl get no**
-
-  * To lists all nodes, along with extra (“wide”) information. List nodes with custom columns (quick summary view)
-
-    **kubectl get nodes -o wide**
-
-  * To get detailed information about a single node
-
-    **kubectl describe node <node-name>**
-
-  * Show node details in a YAML format
-
-    **kubectl get node <node-name> -o yaml**
-
-  * * Show node details in a JSON format
-   
-      **kubectl get node <node-name> -o json**
-
-### create or update resources in your Kubernetes cluster using a configuration file (YAML or JSON).
-
-  * Basic syntax
-
-    **kubectl apply -f \<file-name>\.yaml**
-
-  * Apply from a remote URL
-
-    **kubectl apply -f https://k8s.io/examples/application/deployment.yaml**
-
-  * Apply multiple files
-
-    **kubectl apply -f \<filename_1>\.yaml -f \<filename_2>\.yaml**
-
-  * Common options
-    
-    **-f	--> Specifies the file or folder**  
-    **--dry-run=client	--> Check if YAML is valid without applying**  
-    **--namespace <ns>	--> Apply in a specific namespace**  
-    
-### To get logs from a pod in Kubernetes
-
-  * Basic command (single-container pod)
-    
-    **kubectl logs \<pod-name>**
-
-  * If the pod has multiple containers
-
-    **kubectl logs \<pod-name> -c \<container-name>**
-
+kubernetes/ ← Root
+│
+├── k8s_installation/ ← Scripts to setup a Kubernetes cluster (kubeadm / kops)  
+│ ├── k8s_installation.sh  
+│ └── install_kubernetes_using_kops.txt  
+├── Pod/ ← Examples of basic Pods and container types  
+├── Deployment/ ← Deployment manifests (basic, rolling-update, with probes, etc.)  
+├── Replicaset/ ← ReplicaSet example(s)  
+├── Daemonset/ ← DaemonSet examples  
+├── StatefulSet_and_HeadlessService/ ← StatefulSet + headless service + PVC examples  
+├── Service/ ← Service manifests: ClusterIP, NodePort, LoadBalancer, etc.  
+├── Ingress/ ← Ingress controller + resource configuration  
+├── Volumes/ ← Examples: hostPath, emptyDir, configMap volume mounts, etc.  
+├── Persistent_Volumes/ ← PV, PVC, StorageClass, StatefulSet with PVC  
+├── ConfigMaps_and_Secretes/ ← ConfigMap & Secret usage / volume-mounts / env injection  
+├── RBAC/ ← Role, ClusterRole, RoleBinding, ClusterRoleBinding, ServiceAccount examples  
+├── Network_Policy/ ← NetworkPolicy examples (default-deny, allow rules, etc.)  
+├── Jobs/ ← Batch jobs / scheduled work examples  
+├── Pod_Autoscaling/ ← Horizontal Pod Autoscaling examples  
+├── Probes/ ← Liveness and Readiness probe usage examples  
+├── Namespace/ ← Namespaces and resource-quota / limit examples  
+├── ResourceQuota_and_limits/ ← ResourceQuota & resource-limits examples  
+├── Simple_Flask_APP_Example/ ← Demo frontend-backend-DB Flask microservice example  
+├── Simple_Flask_App_with_NetworkPolicy/ ← Flask example with explicit NetworkPolicy for isolation  
+├── Types_of_containers/ ← Examples of init-containers, sidecars, multi-container pods, etc.  
+├── README.md ← This documentation  
+└── ... ← More examples and future additions  
     
 
   
