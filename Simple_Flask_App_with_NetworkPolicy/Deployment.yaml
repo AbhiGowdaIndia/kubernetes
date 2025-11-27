@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend               # Name of Deployment
+spec:
+  replicas: 1                  # Run 1 pod
+  selector:
+    matchLabels:
+      app: frontend            # Label selector
+  template:
+    metadata:
+      labels:
+        app: frontend          # Pod gets this label
+    spec:
+      containers:
+      - name: frontend
+        image: yourrepo/frontend:latest   # Your frontend Docker image
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: yourrepo/backend:latest
+        ports:
+        - containerPort: 5001
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: yourrepo/db:latest
+        ports:
+        - containerPort: 5002
