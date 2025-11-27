@@ -8,3 +8,10 @@
 * **A NetworkPolicy lets you restrict this traffic.**
 * **When defining a pod or namespace based network policy, we use a selector to specify what traffic is allowed to and from the pod(s) that match the selector.**
 
+* To cretate a network policy which deny all ingress
+
+  **kubectl apply -f NP_Deny_all_ingress.yaml**
+
+  * **podSelector: {}** → Selects all pods in the namespace (default).
+  * **policyTypes: Ingress** → This policy controls only incoming traffic.
+  * **No ingress: block** → This means deny all ingress traffic.
