@@ -42,6 +42,22 @@
       * Runs 1 replica
       * Uses Docker image you created
       * Exposes container port
+  * *** **kubectl apply -f Deployment.yaml**
+
+* **Service.yaml**
+
+  * Services give stable DNS names so apps can reach each other
+  * **kubectl apply -f Service.yaml**
+
+* **Ingress.yaml**
+
+  * Expose only frontend to external world.
+  * Requests to your domain go to frontend service
+  * Backend and DB remain internal only
+  * **kubectl apply -f Ingress.yaml**
+
+* 
+
 
 
 
