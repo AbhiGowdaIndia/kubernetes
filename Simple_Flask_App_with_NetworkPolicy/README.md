@@ -34,6 +34,15 @@
   * Push the image to Docker Hub
     **docker push yourrepo/frontend:latest**  # do the same for other API's also ( backend and db )
 
+* **Deployment.yaml**
+
+  * **Defines Pods + ReplicaSets for all 3 tiers:**
+    * frontend Deployment, backend Deployment, db Deployment
+    * Each Deployment:
+      * Runs 1 replica
+      * Uses Docker image you created
+      * Exposes container port
+
 
 
 
