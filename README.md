@@ -31,7 +31,7 @@ kubernetes/                               ← Root
 ├── Volumes/                              ← Examples: hostPath, emptyDir, ConfigMap volume mounts, PV, PVC, StorageClass.  
 │  
 ├── ConfigMaps_and_Secretes/              ← ConfigMap & Secret usage   
-│
+│  
 ├── RBAC/                                 ← Role, ClusterRole, RoleBinding, ClusterRoleBinding, ServiceAccount examples  
 │  
 ├── Network_Policy/                       ← NetworkPolicy examples (default-deny, allow rules, etc.)  
