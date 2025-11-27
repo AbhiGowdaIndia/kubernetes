@@ -28,7 +28,7 @@ kubernetes/                               ← Root
 │  
 ├── Ingress/                              ← Ingress controller + resource configuration  
 │  
-├── Volumes/                              ← Examples: hostPath, emptyDir, ConfigMap volume mounts, PV, PVC, StorageClass, StatefulSet with PVC.  
+├── Volumes/                              ← Examples: hostPath, emptyDir, ConfigMap volume mounts, PV, PVC, StorageClass.  
 │  
 ├── ConfigMaps_and_Secretes/              ← ConfigMap & Secret usage   
 │
